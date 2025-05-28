@@ -1,0 +1,15 @@
+<h1>{{ page.title }}</h1>
+<p><strong>Filmed on:</strong> {{ page.filmed_date }}</p>
+<p><strong>People in video:</strong>
+  {% for person in page.people %}
+    {{ person }}{% if forloop.last == false %}, {% endif %}
+  {% endfor %}
+</p>
+<iframe width="560" height="315"
+    src="https://www.youtube.com/embed/{{ page.youtube_id }}"
+    frameborder="0" allowfullscreen>
+</iframe>
+
+<div>
+  {{ content }}
+</div>
